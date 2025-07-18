@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    /*Configuração das cores*/
+    --bg-color:#17181d;
+    --gray-100:#0D0E11;
+    --gray-200:#16181D;
+    --gray-300:#292C34;
+    --gray-400:#878EA1;
+    --gray-500:#C0C4CE;
+    --gray-600:#E2E4E9;
+
+    /*Configuração das fontes*/
+    --font-family-title :Asap , sans-serif;
+    --font-family-paragraph:Maven pro, sans-serif;
+
+    /*Configuração dos tamanhos*/
+    --text-lg-title: 700 56px/120% var(--font-family-title);
+    --text-md-title: 700 24px/120% var(--font-family-title);
+    --text-sm-title :700 16px/120% var(--font-family-title);
+
+    --text-md: 400 16px/140% var(--font-family-paragraph);
+    --text-md-stroke: 500 16px/140% var(--font-family-paragraph);
+    --text-sm: 400 14px/140% var(--font-family-paragraph);
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--gray-600);
+    font-family: var(--font-family-paragraph);
+    font-size: var(--text-md);
+}
+
+h2{
+   font: var(--text-md-title);
+    color: var(--gray-600);
+}
+
+p{
+    font: var(--text-md);
+    color: var(--gray-500);
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-gray-500);
+    font: var(--text-md-stroke);
+  }
+
+   a {
+          text-decoration: none;
+          color: var(--gray-500); /* Corrigido para a variável correta */
+          font: var(--text-md-stroke);
+          transition: color 0.3s ease;
+      }
+
+      a:hover {
+          color: var(--gray-600);
+      }
+
+      ul, ol {
+          list-style-position: outside;
+          margin-bottom: 1rem;
+          padding-left: 1.5rem;
+      }
+
+      li {
+          margin-bottom: 0.5rem;
+      }
+
+      button {
+          cursor: pointer;
+          border: none;
+          padding: 0.75rem 1.5rem;
+          font: var(--text-md-stroke);
+          border-radius: 0.25rem;
+          transition: background-color 0.3s ease, color 0.3s ease;
+          background-color: var(--gray-300);
+          color: var(--gray-600);
+      }
+
+      button:hover {
+          background-color: var(--gray-400);
+      }
+
+      .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 1.5rem;
+      }
+
+      .section-padding {
+          padding: 4rem 0;
+      }
