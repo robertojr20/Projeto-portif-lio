@@ -1,61 +1,123 @@
-<body>
-    <header class="main-header"> 
-        <h1>Roberto Varela</h1>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Portfólio | Roberto Varela</title>
+
+    <!-- Meta descrição para SEO e compartilhamento -->
+    <meta name="description" content="Portfólio de Roberto Varela, desenvolvedor web apaixonado por tecnologia e inovação, com projetos em HTML, CSS, JavaScript, Python e React." />
+
+    <!-- Links das fontes Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap" rel="stylesheet">
+
+    <!-- Link principal para o arquivo CSS. Ele importará os outros arquivos. -->
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <!-- Cabeçalho principal da página -->
+    <!-- Alterado de ID para CLASSE para 'main-header' -->
+    <header class="main-header">
+      <img src="assets/icon/letter-r.svg" alt="Logo com a letra R">
+      <nav class="navagation">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <section id="inicio">
-            <h2>Bem-vindo ao meu portfólio</h2>
-            <p>Este é um espaço onde compartilho minhas habilidades e projetos.</p>
-        </section>
-        <section id="sobre">
-            <h2>Sobre Mim</h2>
-            <p>Sou um desenvolvedor apaixonado por tecnologia e inovação. Tenho experiência em diversas áreas de desenvolvimento web e sempre busco aprender mais.</p>
-        </section>
-        <section id="habilidades">
-            <h2>Habilidades</h2>
-            <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>Python</li>
-                <li>React</li>
-            </ul>
-        </section>
-        <section id="projetos">
-            <h2>Projetos</h2>
-            <p>Aqui estão alguns dos meus projetos mais recentes:</p>
-        </section>
-        <section id="contato">
+      <!-- Seção de Início/Boas-vindas -->
+      <section id="inicio" class="section-padding hero-section">
+        <div class="container-welcome">
+          <h1>Ola, eu sou Roberto Varela.</h1>
+          <p>Sou um Desenvolvedor Fullstack, apaixonado por criar soluções digitais inovadora e eficientes. Com expertise em <span>React</span> e <span>Node.js</span>transormo ideias complexas de usuario e intuitivas</p>
 
-            <h2>Contato</h2>
+          <div class="cnt-button">
+            <a href="#contato" class="button">Entre em contato</a>
+            <a href="#projetos" class="button">Veja meus projetos</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção Sobre Mim -->
+      <section id="sobre" class="section-padding">
+        <div class="container">
+          <h2>Sobre Mim</h2>
+          <p>
+            Sou um desenvolvedor apaixonado por tecnologia e inovação. Tenho
+            experiência em diversas áreas de desenvolvimento web e sempre busco
+            aprender mais.
+          </p>
+        </div>
+      </section>
+
+      <!-- Seção de Habilidades -->
+      <section id="habilidades" class="section-padding">
+        <div class="container">
+          <h2>Habilidades</h2>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>React</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Seção de Projetos -->
+      <section id="projetos" class="section-padding">
+        <div class="container">
+          <h2>Projetos</h2>
+          <p>Aqui estão alguns dos meus projetos mais recentes:</p>
+          <!-- Aqui você adicionará os cards de projetos -->
+        </div>
+      </section>
+
+      <!-- Seção de Contato -->
+      <section id="contato" class="section-padding">
+        <div class="container">
+          <h2>Contato</h2>
+          <form method="post">
             <fieldset>
-                <legend>Contato</legend>
-                <form method="post">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" required>
-                    
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                    
-                    <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-                    
-                    <button type="submit">Enviar</button>
-                </form>
+              <legend>Entre em contato</legend> <!-- Texto da legenda mais amigável -->
+              <label for="nome">Nome:</label>
+              <input type="text" id="nome" name="nome" required />
+
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+
+              <label for="mensagem">Mensagem:</label>
+              <textarea
+                id="mensagem"
+                name="mensagem"
+                rows="4"
+                required
+              ></textarea>
+
+              <button type="submit">Enviar Mensagem</button> <!-- Texto do botão mais claro -->
             </fieldset>
-        </section>
+          </form>
+        </div>
+      </section>
     </main>
 
+    <!-- Rodapé da página -->
     <footer>
-        </footer>
-</body>
+      <div class="container">
+        <p>&copy; 2024 Roberto Varela. Todos os direitos reservados.</p>
+        <!-- Adicione links para redes sociais aqui, se desejar -->
+      </div>
+    </footer>
+  </body>
+</html>
