@@ -46,12 +46,6 @@ p{
     color: var(--gray-500);
 }
 
-a {
-    text-decoration: none;
-    color: var(--color-gray-500);
-    font: var(--text-md-stroke);
-  }
-
    a {
           text-decoration: none;
           color: var(--gray-500); /* Corrigido para a variável correta */

@@ -1,0 +1,67 @@
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.hero-section .profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hero-section h1 {
+  /* Sobrescreve o h1 global para um tamanho mais adequado para o título principal */
+  font: 700 3.5rem/1.2 var(--font-family-title); /* Ex: 56px */
+  margin-bottom: 0.5rem;
+}
+
+.hero-section p {
+  font: var(--text-md);
+  color: var(--gray-500);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px; /* Limita a largura do parágrafo */
+}
+
+
+
+.cnt-button {
+  display: flex;
+  margin-top: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap; /*permite que os botões quebrem em telas pequenas */
+  justify-content: center; /* Centraliza os botões */
+}
+
+.cnt-button .button {
+  padding: 0.8rem 1.8rem;
+  font: var(--text-md-stroke);
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cnt-button .button-primary {
+  background-color: var(--gray-400); /* Cor principal para o botão */
+  color: var(--bg-color);
+}
+
+.cnt-button .button-primary:hover {
+  background-color: var(--gray-500);
+}
+
+.cnt-button .button-secondary {
+  background-color: transparent;
+  border: 2px solid var(--gray-400);
+  color: var(--gray-400);
+}
+
+.cnt-button .button-secondary:hover {
+  background-color: var(--gray-400);
+  color: var(--bg-color);
+}
