@@ -24,6 +24,7 @@
   color: var(--gray-500);
   margin-left: auto;
   margin-right: auto;
+  margin-top: 0.5rem;
   max-width: 700px; /* Limita a largura do parágrafo */
 }
 
@@ -64,4 +65,70 @@
 .cnt-button .button-secondary:hover {
   background-color: var(--gray-400);
   color: var(--bg-color);
+}
+
+/*seção de habilidades */
+
+
+.tech-icons{
+  display: flex; /*faz o que os icones ficam em uma única linha */
+  flex-wrap: wrap;/*Permite que os icones quebrem para a linha em telas  */
+  justify-content: center;/*Centraliza os icones horizonatalmente */
+  gap:1.5rem ;/*Adiciona espaçamento entre os blocos */
+  margin-top: 2rem;/*Espaço acima do bloco de ícone */
+}
+
+.tech-icon-circle{
+  width:70px ;/*Largura do círculo*/
+  height: 70px;/*Altura do círculo*/
+  border-radius: 50%;/*Transforma o elemento em circulo*/
+  background-color:var(--gray-100) ;/*cor de fundo do circulo (um cinza bem escuro )*/
+  border: 1px solid var(--grau-300);/*borda sutil ao redor do circulo*/
+  display: flex;/*Usa o flex pra centralizar a imagem dentro do circulo */
+  justify-content: center;/*Centraliza o conteúdo (imagem) horizontamente*/
+  align-items: center; /*Centraliza o conteúdo (imagem) verticalmente*/
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);/*Adiciona uma sombra para dar profundidade */
+  transform: 0.3s ease, box-shadow 0.3 ease;/*transição suave para o efeitos de hover */
+}
+
+.tech-icons img{
+  width: 60%; /*Define a largura da imagem como 60% do tamnaho do círculo*/
+  height: 60%;/*Define a altura da imagem como 60% do tamanho do círcul*/
+  object-fit: contain;/*Garante que a imagem se ajuste dentro do espaço sem ser distorcida ou cortada */
+  filter: brightness(200%);/*Aumenta o brilho da imagem para torna-la visivel em fundos escuros. 
+                            Isso é um "truque para placeholders escuros.  */
+  transition: transform 0.3s ease, filter 0.3s ease ;/*Transição para efeito do hover */
+}
+
+/*efeito ao passar o mouse sobre o circulo do ícone */
+.tech-icon-circle:hover{
+  transform: translateY(-2px);/*move o circulo levemente parta cima */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /*aumenta a sombra para um efeito  mais pronunciado */
+}
+
+/*Efeito ao passar o mouse sobre a imagem do icone */
+.tech-icon-circle img:hover{
+  transform:sclae(1.1); /*faz a imagem do icone aumentar um pouco de tamanho */
+  filter:brightness(100%) /*remove o Brilho extra ao passar o mouse, mostrando a cor original do ícone (se ele tiver)  */
+}
+ /*Media queries para responsavidade (seção de habilidades)*/
+@media (max-width:768px){
+  .tech-icon-circle{
+    width: 60px; /*reduz o tamanho do circulo em telas menores */
+    height: 60px;
+  }
+  .tech-icons img{
+    width: 65%;/*Ajusta o tamanho da imagem dentro do círculo em telas menores */
+    height: 65%;
+  }
+}
+
+@media (max-width:480px){
+  .tech-icons{
+    gap:1rem; /*reduz o espaçamento entre os ícones em telas muito pequena*/
+  }
+  .tech-icon-circle{
+    width: 55px;/*reduz ainda mais o tamanho do circulo*/
+    height: 55px;
+  }
 }

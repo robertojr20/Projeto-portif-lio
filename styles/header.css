@@ -37,7 +37,7 @@
   background-color: var(--gray-300);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .main-header {
     flex-direction: column;
     padding: 1rem 1rem;
