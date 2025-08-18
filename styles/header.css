@@ -1,3 +1,4 @@
+/* Mantenha todos os estilos existentes para desktop */
 .main-header {
   display: flex;
   justify-content: space-between;
@@ -15,7 +16,6 @@
   width: auto;
 }
 
-/*A navegação completa é vísivel por padrão em telas grande*/
 .navegation {
   display: block;
 }
@@ -32,18 +32,17 @@
   text-decoration: none;
   color: var(--gray-400);
   font: var(--text-md-stroke);
-  transition: color 0.3s ease-in-out, background-color 0.3s ease;
+  transition: color 0.3s ease-in-out;
   padding: 0.5rem 0.8rem;
   border-radius: 0.25rem;
 }
 
 .navegation ul li a:hover {
   color: var(--primary-color);
-  background-color: none;
 }
 
 .hamburguer-menu {
-  display: none; /*Oculta por padrão em telas grandes */
+  display: none;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -61,15 +60,17 @@
   transition: all 0.3s ease-in-out;
 }
 
-/*Animação do hamburguer para o X */
-.hamburguer-menu.active.bar:nth-child(2) {
+/* CORREÇÃO: Adicionei espaço entre as classes */
+.hamburguer-menu.active .bar:nth-child(2) {
   opacity: 0;
 }
-.hamburguer-menu.active.bar:nth-child(1) {
+
+.hamburguer-menu.active .bar:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
-.hamburguer-menu.active.bar:nth-child(3) {
-  transform: translateY(8px) rotate(-45deg);
+
+.hamburguer-menu.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 @media (max-width: 768px) {
@@ -77,11 +78,7 @@
     padding: 1rem 1.5rem;
   }
 
-  .main-header img {
-    margin-bottom: 0;
-  }
-
-  /* Oculta a navegação completa */
+  /* CORREÇÃO: Nome da classe correto (.navegation) */
   .navegation {
     display: none;
     width: 100%;
@@ -90,26 +87,28 @@
     left: 0;
     background-color: var(--bg-color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem 0;
+    transform: translateY(-150%);
     transition: transform 0.3s ease-in-out;
-    transform: translateY(-100%);
   }
-  navagation.active {
+
+  /* Nome da classe correto e estilos ajustados */
+  .navegation.active {
     display: block;
     transform: translateY(0);
   }
-  .navagation ul {
+
+  .navegation ul {
     flex-direction: column;
     text-align: center;
     gap: 0.5rem;
   }
-  .navagation ul li a {
+
+  .navegation ul li a {
     padding: 0.8rem 0;
     display: block;
   }
 
-  /* Exibe o menu hambúrguer */
   .hamburguer-menu {
     display: block;
   }

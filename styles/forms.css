@@ -62,7 +62,12 @@
   font: var(--text-md-stroke);
   padding: 1rem 2rem;
   border-radius: 0.5rem;
-  margin-top: 1rem;
+  margin: 1rem auto 0; /* top | horizontal | bottom */
+  display: block;
+  width: fit-content; /* Ajusta a largura ao conteúdo */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease
 }
 
 #contato button[type="submit"]:hover {

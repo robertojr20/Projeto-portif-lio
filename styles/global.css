@@ -6,6 +6,8 @@
 
 html {
   scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Aproximadamente a altura do seu header */
+
 }
 
 :root {
