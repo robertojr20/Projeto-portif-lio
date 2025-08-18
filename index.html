@@ -7,6 +7,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <title>Portfólio | Roberto Varela</title>
 
     <!-- Meta descrição para SEO e compartilhamento -->
@@ -24,6 +26,14 @@
       href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Link principal para o arquivo CSS. Ele importará os outros arquivos. -->
     <link rel="stylesheet" href="styles/index.css" />
@@ -33,7 +43,12 @@
     <!-- Alterado de ID para CLASSE para 'main-header' -->
     <header class="main-header">
       <img src="assets/icon/letter-r.svg" alt="Logo com a letra R" />
-      <nav class="navagation">
+      <button class="hamburguer-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav class="navegation">
         <ul>
           <li><a href="#inicio">Início</a></li>
           <li><a href="#habilidades">Habilidades</a></li>
@@ -51,20 +66,25 @@
             src="assets/icon/foto.jpg"
             alt="foto de Roberto Varela"
             class="profile-photo"
+            loading="lazy"
+            width="150"
+            height="150"
           />
-          <h1>Ola, eu sou Roberto Varela.</h1>
+          <h1>Ola, eu sou <span>Roberto Varela </span>.</h1>
           <h2>Desenvolvedor Fullstack</h2>
           <p>
-            Formado em Ciência pela Faculdade De Americana, Atualmente como
-            <span>Assistente de TI</span> na Faculdade De Americana
+            Formado em ciência da computação pela Faculdade De Americana, Atualmente como
+            <strong>Assistente de TI</strong> na Faculdade De Americana.
           </p>
 
-          <div class="cnt-button">
-            <a href="#contato" class="button button-secondary"
+          <div class="hero-button">
+            <a href="#contato" class="button button-primary" aria-label="Entre em contato"
               >Entre em contato</a
             >
-            <a href="#projetos" class="button button-primary"
-              >Veja meus projetos</a
+            <a href="#Download" class="button button-secondary" download="Curriculos-Curriculo-Ju.pdf"
+            >Baixar curriculo </span></a>
+            <a href="#projetos" class="button button-secondary"
+            >Veja meus projetos</a
             >
           </div>
         </div>
@@ -76,31 +96,31 @@
           <h2>Habilidades</h2>
           <p>
             Aqui estão algumas das tecnologias e ferramentas com as quais
-            trabalho
-            <div class="tech-icons">
-              <div class="tech-icon-circle">
-                <img src="assets/icon/html-5.svg" alt="HTML">
-              </div>
-              <div class="tech-icon-circle">
-                <img src="assets/icon/css-3.svg" alt="CSS">
-              </div>
-              <div class="tech-icon-circle">
-                <img src="assets/icon/linux.svg" alt="Linux">
-              </div>
-              <div class="tech-icon-circle">
-                <img src="assets/icon/js.svg" alt="JavaScript">
-              </div>
-              <div class="tech-icon-circle">
-                <img src="assets/icon/mysql.svg" alt="MySQL">
-              </div>
-              <div class="tech-icon-circle">
-                <img src="assets/icon/nodejs.svg" alt="NODE.js">
-              </div>
-              <div class="tech-icon-circle">
-                <img src="assets/icon/react.svg" alt="React">
-              </div>
-              
+            trabalho.
+          </p>
+          <div class="tech-icons">
+            <div class="tech-icon-circle">
+              <img src="assets/icon/html-5.svg" alt="HTML" />
             </div>
+            <div class="tech-icon-circle">
+              <img src="assets/icon/css-3.svg" alt="CSS" />
+            </div>
+            <div class="tech-icon-circle">
+              <img src="assets/icon/linux.svg" alt="Linux" />
+            </div>
+            <div class="tech-icon-circle">
+              <img src="assets/icon/js.svg" alt="JavaScript" />
+            </div>
+            <div class="tech-icon-circle">
+              <img src="assets/icon/mysql.svg" alt="MySQL" />
+            </div>
+            <div class="tech-icon-circle">
+              <img src="assets/icon/nodejs.svg" alt="NODE.js" />
+            </div>
+            <div class="tech-icon-circle">
+              <img src="assets/icon/react.svg" alt="React" />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -110,16 +130,63 @@
           <h2>Projetos</h2>
           <p>Aqui estão alguns dos meus projetos mais recentes:</p>
           <!-- Aqui você adicionará os cards de projetos -->
+          <div class="project-grid">
+            <div class="project-card">
+              <img src="assets/icon/NLW20.png" alt="Projeto-NLW20" />
+              <div class="project-card-content">
+                <h3>Assistente de meta </h3>
+                <p>Este assistente de meta é uma ferramenta interativa que fornece analise estratégica em tempo real para jogos competitivos.
+                <br>
+                Desenvolvido durante a imersão da Rocketseat para praticar integração com e visualização de dados complexos.
+                </p>
+                <p class="tech-stack">Tecnologias: HTML, CSS, JavaScript </p>
+                <div class="project-links">
+                  <a href="https://robertojr20.github.io/Projeto-NLW20/" target="_blank">Ver Demo</a>
+                  <a href="https://github.com/robertojr20/Projeto-NLW20" target="_blank">GitHub</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <img src="assets/icon/portifoliodev.png" alt="Projeto-NLW20" />
+              <div class="project-card-content">
+                <h3>Portfólio Dev</h3>
+                <p>Um exemplo projeto de como criar uma landing page , com a ideia de um portifolio profissional.</p>
+                <p class="tech-stack">Tecnologias: HTML, CSS</p>
+                <div class="project-links">
+                  <a href="https://robertojr20.github.io/Projeto-Portfolio-Dev/" target="_blank">Ver Demo</a>
+                  <a href="https://github.com/robertojr20/Projeto-Portfolio-Dev" target="_blank">GitHub</a>
+                </div>
+              </div>
+            </div>
+             <div class="project-card">
+              <img src="assets/icon/formulario.png" alt="formulario de matricula " />
+              <div class="project-card-content">
+                <h3>Formulário de matricula </h3>
+                <p>Esse projeto é um formulário de matricula desenvolvido em conjunto com a Rocketseat,  com intuito de cadastrar alunos de uma escola.</p>
+                <p class="tech-stack">Tecnologias: HTML, CSS</p>
+                <div class="project-links">
+                  <a href="https://robertojr20.github.io/Form-lario-de-matricula/" target="_blank">Ver Demo</a>
+                  <a href="https://github.com/robertojr20/Form-lario-de-matricula" target="_blank">GitHub</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
       </section>
 
       <!-- Seção de Contato -->
       <section id="contato" class="section-padding">
         <div class="container">
-          <h2>Contato</h2>
+          <h2>Entre em contato</h2>
+          <p>
+            Ficarei feliz em discutir novas oportunidade ou colabora em algum
+            projeto
+          </p>
           <form method="post">
             <fieldset>
-              <legend>Entre em contato</legend>
+              <legend class="sr-only">Formulário de contato</legend>
               <!-- Texto da legenda mais amigável -->
               <label for="nome">Nome:</label>
               <input type="text" id="nome" name="nome" required />
@@ -148,6 +215,14 @@
       <div class="container">
         <p>&copy; 2024 Roberto Varela. Todos os direitos reservados.</p>
         <!-- Adicione links para redes sociais aqui, se desejar -->
+         <div class="social-links">
+            <a href="https://github.com/robertojr20?tab=repositories" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/roberto-varela-98a4601a3/" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
       </div>
     </footer>
   </body>

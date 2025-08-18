@@ -6,7 +6,7 @@
   background-color: var(--gray-200);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -15,7 +15,12 @@
   width: auto;
 }
 
-.navagation ul {
+/*A navegação completa é vísivel por padrão em telas grande*/
+.navegation {
+  display: block;
+}
+
+.navegation ul {
   list-style: none;
   display: flex;
   gap: 2.5rem;
@@ -23,50 +28,96 @@
   padding: 0;
 }
 
-.navagation ul li a {
+.navegation ul li a {
   text-decoration: none;
   color: var(--gray-400);
   font: var(--text-md-stroke);
-  transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease;
   padding: 0.5rem 0.8rem;
   border-radius: 0.25rem;
 }
 
-.navagation ul li a:hover {
-  color: var(--gray-600);
-  background-color: var(--gray-300);
+.navegation ul li a:hover {
+  color: var(--primary-color);
+  background-color: none;
 }
 
-@media (max-width: 800px) {
+.hamburguer-menu {
+  display: none; /*Oculta por padrão em telas grandes */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  position: relative;
+  z-index: 1001;
+}
+
+.hamburguer-menu .bar {
+  display: block;
+  width: 1.56rem;
+  height: 0.18rem;
+  background-color: var(--primary-color);
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+}
+
+/*Animação do hamburguer para o X */
+.hamburguer-menu.active.bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburguer-menu.active.bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburguer-menu.active.bar:nth-child(3) {
+  transform: translateY(8px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
   .main-header {
-    flex-direction: column;
-    padding: 1rem 1rem;
+    padding: 1rem 1.5rem;
   }
 
   .main-header img {
-    margin-bottom: 1rem;
+    margin-bottom: 0;
   }
 
-  .navagation {
+  /* Oculta a navegação completa */
+  .navegation {
+    display: none;
     width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--bg-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-100%);
   }
-
+  navagation.active {
+    display: block;
+    transform: translateY(0);
+  }
   .navagation ul {
     flex-direction: column;
     text-align: center;
     gap: 0.5rem;
   }
-
   .navagation ul li a {
-    font-size: var(--text-sm);
     padding: 0.8rem 0;
+    display: block;
+  }
+
+  /* Exibe o menu hambúrguer */
+  .hamburguer-menu {
     display: block;
   }
 }
 
 @media (max-width: 480px) {
   .main-header {
-    padding: 0.8rem 0.5rem;
+    padding: 0.8rem 1rem;
   }
 
   .main-header img {
