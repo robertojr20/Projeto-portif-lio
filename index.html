@@ -184,7 +184,7 @@
             Ficarei feliz em discutir novas oportunidade ou colabora em algum
             projeto
           </p>
-          <form id="contato">
+          <form id="contato-form">
             <fieldset>
               <legend class="sr-only">Formulário de contato</legend>
               <!-- Texto da legenda mais amigável -->
@@ -205,6 +205,7 @@
               <button type="submit">Enviar Mensagem</button>
               <!-- Texto do botão mais claro -->
             </fieldset>
+            <div id="form-mensagem" style="margin-top: 15px;"></div>
           </form>
         </div>
       </section>
@@ -213,7 +214,7 @@
     <!-- Rodapé da página -->
     <footer>
       <div class="container">
-        <p>&copy; 2024 Roberto Varela. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Roberto Varela. Todos os direitos reservados.</p>
         <!-- Adicione links para redes sociais aqui, se desejar -->
          <div class="social-links">
             <a href="https://github.com/robertojr20?tab=repositories" target="_blank" aria-label="GitHub">
@@ -225,52 +226,9 @@
         </div>
       </div>
     </footer>
-
-    <script>
-document.getElementById('contato-form').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  
-  const form = e.target;
-  const btn = form.querySelector('button[type="submit"]');
-  const mensagemDiv = document.getElementById('form-mensagem');
-  
-  // Mostra feedback visual
-  btn.disabled = true;
-  btn.textContent = 'Enviando...';
-  mensagemDiv.textContent = '';
-  mensagemDiv.style.color = 'inherit';
-
-  try {
-    const response = await fetch('http://localhost:3000/enviar-email', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        nome: form.nome.value,
-        email: form.email.value,
-        mensagem: form.mensagem.value
-      })
-    });
-
-    const data = await response.json();
-    
-    if (data.success) {
-      mensagemDiv.textContent = 'Mensagem enviada com sucesso!';
-      mensagemDiv.style.color = 'var(--primary-color)';
-      form.reset();
-    } else {
-      throw new Error('Falha no servidor');
-    }
-  } catch (error) {
-    mensagemDiv.textContent = 'Erro ao enviar mensagem. Tente novamente.';
-    mensagemDiv.style.color = 'red';
-  } finally {
-    btn.disabled = false;
-    btn.textContent = 'Enviar Mensagem';
-  }
-});
-</script>
    
-    <script src="./script.js" > </script>
+    <script src="./hamburguer.js" > </script>
     <script src="./server.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
