@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     mensagemDiv.style.color = "inherit";
 
     try {
-      const response = await fetch("http://localhost:3000/enviar-email", {
+      const response = await fetch("https://api-envio-email-sigma.vercel.app/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
