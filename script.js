@@ -20,6 +20,11 @@ document.addEventListener("DOMContentLoaded", function () {
     mensagemDiv.style.color = "inherit";
 
     try {
+      // Garante que o elemento de mensagem existe
+      if (!mensagemDiv) {
+        console.warn('#form-mensagem não encontrado no DOM');
+      }
+
       const response = await fetch("https://api-envio-email-sigma.vercel.app/envio-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -30,26 +35,51 @@ document.addEventListener("DOMContentLoaded", function () {
         }),
       });
 
-      const data = await response.json();
+      // Sempre pegue o texto bruto para evitar erro de parse quando o servidor responde com HTML (ex.: página 404)
+      const text = await response.text();
+      let data = null;
+      try {
+        data = text ? JSON.parse(text) : null;
+      } catch (parseError) {
+        // corpo não é JSON — registrar para depuração
+        console.warn('Resposta não-JSON do servidor:', text);
+      }
 
-      if (data.success) {
-        mensagemDiv.textContent = "Mensagem enviada com sucesso!";
-        mensagemDiv.style.color = "var(--primary-color)";
+      if (!response.ok) {
+        console.error('Erro no servidor', response.status, text);
+        mensagemDiv.textContent = 'Erro ao enviar mensagem. Erro do servidor: ' + response.status;
+        mensagemDiv.style.color = 'red';
+        return;
+      }
+
+      if (data && data.success) {
+        if (mensagemDiv) {
+          mensagemDiv.textContent = "Mensagem enviada com sucesso!";
+          mensagemDiv.style.color = "var(--primary-color)";
+        }
         form.reset();
 
-        //faz a mensagem desaparecer em 5 segundos 
-        setTimeout (() => {
-          mensagemDiv.textContent = '';
-          mensagemDiv.style.color = 'inherit';
+        // faz a mensagem desaparecer em 5 segundos
+        setTimeout(() => {
+          if (mensagemDiv) {
+            mensagemDiv.textContent = '';
+            mensagemDiv.style.color = 'inherit';
+          }
         }, 5000);
-
       } else {
-        throw new Error("Falha no servidor");
+        // resposta válida mas sem success=true
+        console.error('Resposta inesperada do servidor:', data || text);
+        if (mensagemDiv) {
+          mensagemDiv.textContent = "Erro ao enviar mensagem. Tente novamente.";
+          mensagemDiv.style.color = "red";
+        }
       }
     } catch (error) {
-      console.error("Erro:", error);
-      mensagemDiv.textContent = "Erro ao enviar mensagem. Tente novamente.";
-      mensagemDiv.style.color = "red";
+      console.error("Erro de rede ou no envio:", error);
+      if (mensagemDiv) {
+        mensagemDiv.textContent = "Erro ao enviar mensagem. Tente novamente.";
+        mensagemDiv.style.color = "red";
+      }
     } finally {
       btn.disabled = false;
       btn.textContent = "Enviar Mensagem";
