@@ -18,7 +18,7 @@ export default async function handler(req, res) {
 
     await transporter.sendMail({
       from: email,
-      to: process.env.MAIL_TO,
+      to: process.env.TO_EMAIL,
       subject: "Nova mensagem do formulário",
       text: `Nome: ${nome}\nEmail: ${email}\nMensagem:\n${mensagem}`,
     });
