@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Método não permitido" });
   }
 
-  const { nome, email, mensagem } = req.body;
+  const { assunto,nome, email, mensagem } = req.body;
 
   try {
     const transporter = nodemailer.createTransport({
@@ -20,7 +20,7 @@ export default async function handler(req, res) {
       from: email,
       to: process.env.TO_EMAIL,
       subject: "Nova mensagem do formulário",
-      text: `Nome: ${nome}\nEmail: ${email}\nMensagem:\n${mensagem}`,
+      text: `Assunto: ${assunto} Nome: ${nome}\nEmail: ${email}\nMensagem:\n${mensagem}`,
     });
 
     return res.status(200).json({ success: true });

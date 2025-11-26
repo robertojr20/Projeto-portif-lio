@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          assunto: form.assunto.value,
           nome: form.nome.value,
           email: form.email.value,
           mensagem: form.mensagem.value,
