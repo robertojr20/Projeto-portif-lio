@@ -6,5 +6,6 @@
 - HTML
 - CSS
 - JS
+- NODE.JS
 ## Desenvolvedor 
 - Roberto Varela
