@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="cyan">
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -9,86 +9,318 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <title>Portfólio | Roberto Varela - Desenvolvedor Fullstack & Assistente de TI</title>
     
-    <title>Portfólio | Roberto Varela</title>
+    <link rel="icon" href="assets/icon/letra-r.png" type="image/png">  
     
-    <link rel="icon" href="assets/icon/letra-r.png" type="image/sv+xml">  
-    
-    <!-- Meta descrição para SEO e compartilhamento -->
+    <!-- Meta descrição para SEO -->
     <meta
       name="description"
-      content="Portfólio de Roberto Varela, desenvolvedor web apaixonado por tecnologia e inovação, com projetos em HTML, CSS, JavaScript, Python e React."
+      content="Portfólio de Roberto Varela, Bacharel em Ciência da Computação (FAM) e Assistente de TI. Desenvolvedor Fullstack especializado em aplicações web modernas com HTML, CSS, JavaScript, React, Node.js e SQL."
     />
 
     <!-- Links das fontes Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Asap:wght@400;600;700;800&family=Maven+Pro:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Link principal para o arquivo CSS. Ele importará os outros arquivos. -->
+    <!-- CSS Principal -->
     <link rel="stylesheet" href="styles/index.css" />
   </head>
   <body>
     <!-- Cabeçalho principal da página -->
-    <!-- Alterado de ID para CLASSE para 'main-header' -->
     <header class="main-header">
-      <img src="assets/icon/letra-r.png" alt="Logo com a letra R" />
-      <button class="hamburguer-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-      <nav class="navegation">
-        <ul>
-          <li><a href="#inicio">Início</a></li>
-          <li><a href="#habilidades">Habilidades</a></li>
-          <li><a href="#projetos">Projetos</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </nav>
+      <a href="#inicio" class="logo-container" aria-label="Ir para início">
+        <img src="assets/icon/letra-r.png" alt="Logo Roberto Varela" />
+        <span class="logo-text">Roberto<strong>.dev</strong></span>
+      </a>
+
+      <div class="header-right">
+        <!-- Seletor de Tema (Accent Color Switcher) -->
+        <div class="theme-switcher" title="Alterar cor de destaque">
+          <span class="theme-dot active" data-set-theme="cyan" title="Ciano"></span>
+          <span class="theme-dot" data-set-theme="violet" title="Violeta"></span>
+          <span class="theme-dot" data-set-theme="emerald" title="Esmeralda"></span>
+          <span class="theme-dot" data-set-theme="blue" title="Azul"></span>
+        </div>
+
+        <button class="hamburguer-menu" aria-label="Abrir menu de navegação">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <nav class="navegation">
+          <ul>
+            <li><a href="#inicio" class="nav-link active">Início</a></li>
+            <li><a href="#sobre" class="nav-link">Sobre</a></li>
+            <li><a href="#experiencia" class="nav-link">Experiência</a></li>
+            <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+            <li><a href="#projetos" class="nav-link">Projetos</a></li>
+            <li><a href="#contato" class="nav-link">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main>
-      <!-- Seção de Início/Boas-vindas -->
+      <!-- Seção de Início/Hero -->
       <section id="inicio" class="section-padding hero-section">
-        <div class="container-welcome">
-          <img
-            src="assets/icon/foto.jpg"
-            alt="foto de Roberto Varela"
-            class="profile-photo"
-            loading="lazy"
-            width="150"
-            height="150"
-          />
-          <h1>Ola, eu sou <span>Roberto Varela </span>.</h1>
-          <h2>Desenvolvedor Fullstack</h2>
-          <p>
-            Formado em ciência da computação pela Faculdade De Americana, Atualmente como
-            <strong>Assistente de TI</strong> na Faculdade De Americana.
-          </p>
+        <div class="container">
+          <div class="hero-container">
+            <div class="hero-content">
+              <div class="hero-badge">
+                <span class="dot"></span>
+                <span>Disponível para novos projetos</span>
+              </div>
 
-          <div class="hero-button">
-            <a href="#contato" class="button button-primary" aria-label="Entre em contato"
-              >Entre em contato</a
-            >
-            <a href="assets/curriculo-roberto-varela.pdf"  class="button button-secondary" download="curriculo-roberto-varela.pdf" target="_blank" 
-            >Baixar curriculo </span></a>
-            <a href="#projetos" class="button button-secondary"
-            >Veja meus projetos</a
-            >
+              <h1>Olá, eu sou <br><span class="name">Roberto Varela</span></h1>
+
+              <div class="typewriter-container">
+                <span class="typewriter-text" id="typewriter"></span>
+              </div>
+
+              <p class="hero-description">
+                Bacharel em <strong>Ciência da Computação</strong> pela Faculdade de Americana (FAM) e atuando como 
+                <strong>Assistente de TI</strong>. Desenvolvo sistemas eficientes, modernos e focados na melhor experiência do usuário.
+              </p>
+
+              <div class="hero-button">
+                <a href="#contato" class="button button-primary" aria-label="Entre em contato">
+                  <i class="fas fa-paper-plane"></i> Entre em contato
+                </a>
+                <a href="assets/curriculo-roberto-varela.pdf" class="button button-secondary" download="curriculo-roberto-varela.pdf" target="_blank">
+                  <i class="fas fa-file-download"></i> Currículo
+                </a>
+                <a href="#projetos" class="button button-secondary">
+                  <i class="fas fa-code"></i> Projetos
+                </a>
+              </div>
+            </div>
+
+            <!-- Moldura Compacta e Elegante da Foto -->
+            <div class="hero-image-card">
+              <div class="tech-avatar-frame" id="techAvatar">
+                <div class="photo-watermark-wrapper">
+                  <img
+                    src="assets/img/Fotoperfil.jpeg"
+                    alt="Foto de Roberto Varela"
+                    class="profile-photo-watermark"
+                  />
+                  <div class="photo-overlay-gradient"></div>
+                </div>
+
+                <!-- Floating Badges -->
+                <div class="floating-chip chip-1">
+                  <i class="fas fa-code"></i> Fullstack Dev
+                </div>
+                <div class="floating-chip chip-2">
+                  <i class="fas fa-user-shield"></i> Assistente de TI
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Stats Row -->
+          <div class="hero-stats">
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="stat-info">
+                <h4>Ciência da Computação</h4>
+                <p>Bacharelado pela FAM</p>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <div class="stat-info">
+                <h4>Assistente de TI</h4>
+                <p>Suporte & Infraestrutura</p>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-layer-group"></i>
+              </div>
+              <div class="stat-info">
+                <h4>Fullstack Web</h4>
+                <p>HTML, CSS, JS, Node, SQL</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção Sobre Mim -->
+      <section id="sobre" class="section-padding">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-subtitle">Conheça Minha Trajetória</span>
+            <h2>Sobre Mim</h2>
+            <div class="section-title-line"></div>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-text-card">
+              <p>
+                Sou formado em <strong>Ciência da Computação</strong> pela Faculdade de Americana (FAM). Minha jornada no ecossistema de Tecnologia da Informação combina sólidos fundamentos de engenharia de software com atuação prática no dia a dia como <strong>Assistente de TI</strong>.
+              </p>
+              <p>
+                Trabalho no desenvolvimento de aplicações web completas (Frontend e Backend), manutenção de banco de dados e otimização de fluxos operacionais de TI. Tenho como compromisso escrever código limpo, escalável e focado na melhor usabilidade final.
+              </p>
+            </div>
+
+            <div class="about-highlights">
+              <div class="highlight-item">
+                <div class="highlight-icon">
+                  <i class="fas fa-university"></i>
+                </div>
+                <div class="highlight-content">
+                  <h4>Formação Acadêmica</h4>
+                  <p>Bacharelado em Ciência da Computação - Faculdade de Americana (FAM).</p>
+                </div>
+              </div>
+
+              <div class="highlight-item">
+                <div class="highlight-icon">
+                  <i class="fas fa-microchip"></i>
+                </div>
+                <div class="highlight-content">
+                  <h4>Atuação Profissional</h4>
+                  <p>Suporte a usuários, administração de redes, sistemas internos e automação.</p>
+                </div>
+              </div>
+
+              <div class="highlight-item">
+                <div class="highlight-icon">
+                  <i class="fas fa-rocket"></i>
+                </div>
+                <div class="highlight-content">
+                  <h4>Foco Tecnológico</h4>
+                  <p>Aplicações Web Responsivas, APIs RESTful com Node.js e banco de dados SQL.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção Linha do Tempo / Experiência Profissional -->
+      <section id="experiencia" class="section-padding">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-subtitle">Histórico de Atuação</span>
+            <h2>Experiência Profissional</h2>
+            <div class="section-title-line"></div>
+          </div>
+
+          <div class="timeline-wrapper">
+            <!-- Item 1: Faculdade de Americana -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">Jan 2025 – Presente</span>
+                <h3>Assistente de TI</h3>
+                <div class="timeline-company">
+                  <i class="fas fa-building"></i> Faculdade de Americana (FAM)
+                </div>
+                <p>
+                  Atuação no suporte presencial e remoto Nível 1 aos usuários. Configuração e manutenção de redes locais (TCP/IP, DNS, DHCP), montagem/manutenção de hardware, gerenciamento de periféricos e resolução de falhas de infraestrutura.
+                </p>
+                <div class="timeline-tags">
+                  <span class="tech-tag">Suporte Nível 1</span>
+                  <span class="tech-tag">Redes (TCP/IP)</span>
+                  <span class="tech-tag">Hardware</span>
+                  <span class="tech-tag">Linux / Windows</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 2: Ober S/A -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">Abr 2024 – Jan 2025</span>
+                <h3>Alimentador de Linha de Produção</h3>
+                <div class="timeline-company">
+                  <i class="fas fa-industry"></i> Ober S/A Indústria e Comércio
+                </div>
+                <p>
+                  Abastecimento e controle operacional de máquinas, organização logística e garantia de fluxo eficiente do ambiente corporativo e produtivo.
+                </p>
+                <div class="timeline-tags">
+                  <span class="tech-tag">Logística Operacional</span>
+                  <span class="tech-tag">Organização</span>
+                  <span class="tech-tag">Processos</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 3: Cris Água do Brasil -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">Jun 2023 – Dez 2023</span>
+                <h3>Estagiário em Suporte Técnico (Remoto)</h3>
+                <div class="timeline-company">
+                  <i class="fas fa-headset"></i> Cris Água do Brasil LTDA
+                </div>
+                <p>
+                  Criação e manipulação de base de dados em SQL, atendimento a chamados técnicos de suporte remoto aos usuários e auxílio em modificações no software interno da empresa.
+                </p>
+                <div class="timeline-tags">
+                  <span class="tech-tag">SQL</span>
+                  <span class="tech-tag">Suporte Remoto</span>
+                  <span class="tech-tag">Software Interno</span>
+                  <span class="tech-tag">Banco de Dados</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 4: Alvarenga Artefatos Têxteis -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">Mai 2021 – Set 2022</span>
+                <h3>Ajudante Geral & Apoio Logístico</h3>
+                <div class="timeline-company">
+                  <i class="fas fa-boxes"></i> Alvarenga Artefatos Têxteis LTDA
+                </div>
+                <p>
+                  Auxílio no processo de corte e preparação de materiais, embalagem, expedição e apoio logístico de carga/descarga com entregas locais.
+                </p>
+                <div class="timeline-tags">
+                  <span class="tech-tag">Logística</span>
+                  <span class="tech-tag">Expedição</span>
+                  <span class="tech-tag">Controle de Estoque</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 5: Supermercado Pague Menos -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">Out 2018 – Nov 2018</span>
+                <h3>Empacotador & Atendimento</h3>
+                <div class="timeline-company">
+                  <i class="fas fa-shopping-cart"></i> Supermercado Pague Menos
+                </div>
+                <p>
+                  Atendimento direto ao cliente com rapidez e cordialidade, auxílio no controle de avarias/devoluções e organização de mercadorias.
+                </p>
+                <div class="timeline-tags">
+                  <span class="tech-tag">Atendimento ao Cliente</span>
+                  <span class="tech-tag">Agilidade</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -96,32 +328,70 @@
       <!-- Seção de Habilidades -->
       <section id="habilidades" class="section-padding">
         <div class="container">
-          <h2>Habilidades</h2>
-          <p>
-            Aqui estão algumas das tecnologias e ferramentas com as quais
-            trabalho.
-          </p>
-          <div class="tech-icons">
-            <div class="tech-icon-circle">
-              <img src="assets/icon/html-5.svg" alt="HTML" />
+          <div class="section-header">
+            <span class="section-subtitle">Minhas Competências</span>
+            <h2>Habilidades Técnicas</h2>
+            <div class="section-title-line"></div>
+          </div>
+          
+          <div class="skills-container">
+            <!-- Categoria 1: Frontend -->
+            <div class="skills-category">
+              <div class="skills-category-title">
+                <i class="fas fa-desktop"></i> Frontend Development
+              </div>
+              <div class="tech-icons-grid">
+                <div class="tech-card">
+                  <img src="assets/icon/html-5.svg" alt="HTML5" />
+                  <span>HTML5</span>
+                </div>
+                <div class="tech-card">
+                  <img src="assets/icon/css-3.svg" alt="CSS3" />
+                  <span>CSS3</span>
+                </div>
+                <div class="tech-card">
+                  <img src="assets/icon/js.svg" alt="JavaScript" />
+                  <span>JavaScript</span>
+                </div>
+                <div class="tech-card">
+                  <img src="assets/icon/react.svg" alt="React" />
+                  <span>React</span>
+                </div>
+              </div>
             </div>
-            <div class="tech-icon-circle">
-              <img src="assets/icon/css-3.svg" alt="CSS" />
+
+            <!-- Categoria 2: Backend & Banco de Dados -->
+            <div class="skills-category">
+              <div class="skills-category-title">
+                <i class="fas fa-server"></i> Backend & Banco de Dados
+              </div>
+              <div class="tech-icons-grid">
+                <div class="tech-card">
+                  <img src="assets/icon/nodejs.svg" alt="Node.js" />
+                  <span>Node.js</span>
+                </div>
+                <div class="tech-card">
+                  <img src="assets/icon/mysql.svg" alt="MySQL" />
+                  <span>MySQL</span>
+                </div>
+              </div>
             </div>
-            <div class="tech-icon-circle">
-              <img src="assets/icon/linux.svg" alt="Linux" />
-            </div>
-            <div class="tech-icon-circle">
-              <img src="assets/icon/js.svg" alt="JavaScript" />
-            </div>
-            <div class="tech-icon-circle">
-              <img src="assets/icon/mysql.svg" alt="MySQL" />
-            </div>
-            <div class="tech-icon-circle">
-              <img src="assets/icon/nodejs.svg" alt="NODE.js" />
-            </div>
-            <div class="tech-icon-circle">
-              <img src="assets/icon/react.svg" alt="React" />
+
+            <!-- Categoria 3: Infraestrutura & Ferramentas -->
+            <div class="skills-category">
+              <div class="skills-category-title">
+                <i class="fas fa-tools"></i> Infraestrutura & Ferramentas
+              </div>
+              <div class="tech-icons-grid">
+                <div class="tech-card">
+                  <img src="assets/icon/linux.svg" alt="Linux" />
+                  <span>Linux</span>
+                </div>
+                <div class="tech-card">
+                  <img src="assets/icon/github.svg" alt="Git & GitHub" />
+                  <span>Git / GitHub</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -130,51 +400,107 @@
       <!-- Seção de Projetos -->
       <section id="projetos" class="section-padding">
         <div class="container">
-          <h2>Projetos</h2>
-          <p>Aqui estão alguns dos meus projetos mais recentes:</p>
-          <!-- Aqui você adicionará os cards de projetos -->
+          <div class="section-header">
+            <span class="section-subtitle">Portfólio em Destaque</span>
+            <h2>Projetos Recentes</h2>
+            <div class="section-title-line"></div>
+          </div>
+
+          <!-- Filtro de Projetos por Categoria -->
+          <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="fullstack">Fullstack</button>
+            <button class="filter-btn" data-filter="frontend">Frontend</button>
+          </div>
+
           <div class="project-grid">
-            <div class="project-card">
-              <img src="assets/icon/NLW20.png" alt="Projeto-NLW20" />
+            <!-- Projeto 1: Assistente de Meta -->
+            <article class="project-card" data-category="fullstack"
+              data-title="Assistente de Meta (NLW20)"
+              data-description="Ferramenta interativa desenvolvida para fornecer gestão estratégica de metas em tempo real. Permite cadastrar objetivos, acompanhar barras de progresso dinâmicas e visualizar relatórios."
+              data-techs="HTML5, CSS3, JavaScript, Node.js"
+              data-demo="https://robertojr20.github.io/Projeto-NLW20/"
+              data-github="https://github.com/robertojr20/Projeto-NLW20"
+              data-img="assets/icon/NLW20.png"
+            >
+              <div class="project-card-img-wrapper">
+                <span class="project-badge">Fullstack</span>
+                <img src="assets/icon/NLW20.png" alt="Preview Assistente de Meta" loading="lazy" />
+              </div>
               <div class="project-card-content">
-                <h3>Assistente de meta </h3>
-                <p>Este assistente de meta é uma ferramenta interativa que fornece analise estratégica em tempo real para jogos competitivos.
-                <br>
-                Desenvolvido durante a imersão da Rocketseat para praticar integração com e visualização de dados complexos.
-                </p>
-                <p class="tech-stack">Tecnologias: HTML, CSS, JavaScript </p>
+                <h3>Assistente de Meta</h3>
+                <p>Ferramenta interativa de gerenciamento e metas em tempo real construída na imersão Rocketseat.</p>
+                <div class="tech-stack">
+                  <span class="tech-tag">HTML</span>
+                  <span class="tech-tag">CSS</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">Node.js</span>
+                </div>
                 <div class="project-links">
-                  <a href="https://robertojr20.github.io/Projeto-NLW20/" target="_blank">Ver Demo</a>
-                  <a href="https://github.com/robertojr20/Projeto-NLW20" target="_blank">GitHub</a>
+                  <button type="button" class="btn-details"><i class="fas fa-info-circle"></i> Detalhes</button>
+                  <a href="https://robertojr20.github.io/Projeto-NLW20/" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Demo</a>
+                  <a href="https://github.com/robertojr20/Projeto-NLW20" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
                 </div>
               </div>
-            </div>
+            </article>
 
-            <div class="project-card">
-              <img src="assets/icon/portifoliodev.png" alt="Projeto-NLW20" />
+            <!-- Projeto 2: Portfólio Dev -->
+            <article class="project-card" data-category="frontend"
+              data-title="Portfólio Dev"
+              data-description="Landing page moderna e totalmente responsiva com design minimalista em dark mode, focada na apresentação profissional de desenvolvedores de software."
+              data-techs="HTML5, CSS3, JavaScript"
+              data-demo="https://robertojr20.github.io/Projeto-Portfolio-Dev/"
+              data-github="https://github.com/robertojr20/Projeto-Portfolio-Dev"
+              data-img="assets/icon/portifoliodev.png"
+            >
+              <div class="project-card-img-wrapper">
+                <span class="project-badge">Frontend</span>
+                <img src="assets/icon/portifoliodev.png" alt="Preview Portfólio Dev" loading="lazy" />
+              </div>
               <div class="project-card-content">
                 <h3>Portfólio Dev</h3>
-                <p>Um exemplo projeto de como criar uma landing page , com a ideia de um portifolio profissional.</p>
-                <p class="tech-stack">Tecnologias: HTML, CSS</p>
+                <p>Landing page profissional e responsiva para desenvolvedores apresentarem seus projetos com elegância.</p>
+                <div class="tech-stack">
+                  <span class="tech-tag">HTML</span>
+                  <span class="tech-tag">CSS</span>
+                  <span class="tech-tag">Design System</span>
+                </div>
                 <div class="project-links">
-                  <a href="https://robertojr20.github.io/Projeto-Portfolio-Dev/" target="_blank">Ver Demo</a>
-                  <a href="https://github.com/robertojr20/Projeto-Portfolio-Dev" target="_blank">GitHub</a>
+                  <button type="button" class="btn-details"><i class="fas fa-info-circle"></i> Detalhes</button>
+                  <a href="https://robertojr20.github.io/Projeto-Portfolio-Dev/" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Demo</a>
+                  <a href="https://github.com/robertojr20/Projeto-Portfolio-Dev" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
                 </div>
               </div>
-            </div>
-             <div class="project-card">
-              <img src="assets/icon/formulario.png" alt="formulario de matricula " />
-              <div class="project-card-content">
-                <h3>Formulário de matricula </h3>
-                <p>Esse projeto é um formulário de matricula desenvolvido em conjunto com a Rocketseat,  com intuito de cadastrar alunos de uma escola.</p>
-                <p class="tech-stack">Tecnologias: HTML, CSS</p>
-                <div class="project-links">
-                  <a href="https://robertojr20.github.io/Form-lario-de-matricula/" target="_blank">Ver Demo</a>
-                  <a href="https://github.com/robertojr20/Form-lario-de-matricula" target="_blank">GitHub</a>
-                </div>
-              </div>
+            </article>
 
-            </div>
+            <!-- Projeto 3: Formulário de Matrícula -->
+            <article class="project-card" data-category="frontend"
+              data-title="Formulário de Matrícula"
+              data-description="Sistema de formulário de cadastro de estudantes com validações em tempo real, navegação fluida em etapas e suporte mobile."
+              data-techs="HTML5, CSS3, JavaScript"
+              data-demo="https://robertojr20.github.io/Form-lario-de-matricula/"
+              data-github="https://github.com/robertojr20/Form-lario-de-matricula"
+              data-img="assets/icon/formulario.png"
+            >
+              <div class="project-card-img-wrapper">
+                <span class="project-badge">Frontend</span>
+                <img src="assets/icon/formulario.png" alt="Preview Formulário de Matrícula" loading="lazy" />
+              </div>
+              <div class="project-card-content">
+                <h3>Formulário de Matrícula</h3>
+                <p>Interface completa de formulário escolar interativo desenvolvida com validação de dados nativa.</p>
+                <div class="tech-stack">
+                  <span class="tech-tag">HTML</span>
+                  <span class="tech-tag">CSS</span>
+                  <span class="tech-tag">UI/UX</span>
+                </div>
+                <div class="project-links">
+                  <button type="button" class="btn-details"><i class="fas fa-info-circle"></i> Detalhes</button>
+                  <a href="https://robertojr20.github.io/Form-lario-de-matricula/" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Demo</a>
+                  <a href="https://github.com/robertojr20/Form-lario-de-matricula" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -182,61 +508,142 @@
       <!-- Seção de Contato -->
       <section id="contato" class="section-padding">
         <div class="container">
-          <h2>Entre em contato</h2>
-          <p>
-            Ficarei feliz em discutir novas oportunidade ou colabora em algum
-            projeto
-          </p>
-          <form id="contato-form">
-            <fieldset>
-              <legend class="sr-only">Formulário de contato</legend>
-              <!-- Texto da legenda mais amigável -->
+          <div class="section-header">
+            <span class="section-subtitle">Vamos Conversar</span>
+            <h2>Entre em Contato</h2>
+            <div class="section-title-line"></div>
+          </div>
 
-              
-            <label for="assunto">Assunto:</label>
-            <input type="text" id="assunto" name="assunto" required />
-            
-              <label for="nome">Nome:</label>
-              <input type="text" id="nome" name="nome" required />
+          <div class="contact-grid">
+            <!-- Informações de Contato -->
+            <div class="contact-info-card">
+              <h3>Fale Comigo</h3>
+              <p>Estou disponível para novas oportunidades de trabalho, projetos freelance ou parcerias tecnológicas!</p>
 
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required />
+              <div class="contact-items">
+                <div class="contact-item">
+                  <div class="contact-item-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div class="contact-item-details">
+                    <span>Localização</span>
+                    <strong>Americana - SP, Brasil</strong>
+                  </div>
+                </div>
 
-              <label for="mensagem">Mensagem:</label>
-              <textarea
-                id="mensagem"
-                name="mensagem"
-                rows="4"
-                required
-              ></textarea>
+                <div class="contact-item">
+                  <div class="contact-item-icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div class="contact-item-details">
+                    <span>E-mail Direto</span>
+                    <a href="mailto:robertojr.varela22@gmail.com">robertojr.varela22@gmail.com</a>
+                  </div>
+                </div>
 
-              <button type="submit">Enviar Mensagem</button>
-              <!-- Texto do botão mais claro -->
-            </fieldset>
-            <div id="form-mensagem" style="margin-top: 15px;"></div>
-          </form>
+                <div class="contact-item">
+                  <div class="contact-item-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                  </div>
+                  <div class="contact-item-details">
+                    <span>LinkedIn</span>
+                    <a href="https://www.linkedin.com/in/roberto-varela-98a4601a3/" target="_blank" rel="noopener">linkedin.com/in/roberto-varela</a>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-item-icon">
+                    <i class="fab fa-github"></i>
+                  </div>
+                  <div class="contact-item-details">
+                    <span>GitHub</span>
+                    <a href="https://github.com/robertojr20" target="_blank" rel="noopener">github.com/robertojr20</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Formulário -->
+            <form id="contato-form">
+              <fieldset>
+                <legend class="sr-only">Formulário de contato</legend>
+
+                <div>
+                  <label for="assunto"><i class="fas fa-tag"></i> Assunto:</label>
+                  <input type="text" id="assunto" name="assunto" placeholder="Ex: Proposta de projeto ou vaga" required />
+                </div>
+
+                <div>
+                  <label for="nome"><i class="fas fa-user"></i> Nome:</label>
+                  <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
+                </div>
+
+                <div>
+                  <label for="email"><i class="fas fa-envelope"></i> E-mail:</label>
+                  <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required />
+                </div>
+
+                <div>
+                  <label for="mensagem"><i class="fas fa-comment-alt"></i> Mensagem:</label>
+                  <textarea
+                    id="mensagem"
+                    name="mensagem"
+                    rows="4"
+                    placeholder="Escreva sua mensagem aqui..."
+                    required
+                  ></textarea>
+                </div>
+
+                <button type="submit">
+                  <i class="fas fa-paper-plane"></i> Enviar Mensagem
+                </button>
+              </fieldset>
+            </form>
+          </div>
         </div>
       </section>
     </main>
 
+    <!-- Modal de Detalhes dos Projetos -->
+    <div id="project-modal" class="modal-overlay" aria-hidden="true">
+      <div class="modal-container">
+        <button type="button" class="modal-close" id="modal-close-btn" aria-label="Fechar modal">&times;</button>
+        <h3 id="modal-title">Título do Projeto</h3>
+        <div id="modal-tags" class="tech-stack" style="margin: 0.75rem 0 1.25rem;"></div>
+        <img id="modal-img" src="" alt="Project Image" style="width: 100%; height: 220px; object-fit: cover; border-radius: 0.8rem; margin-bottom: 1rem; border: 1px solid var(--card-border);" />
+        <p id="modal-desc" style="color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem;"></p>
+        <div class="project-links" id="modal-links"></div>
+      </div>
+    </div>
+
+    <!-- Container Toast para Mensagens de Feedback -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Botão Voltar ao Topo Flutuante com Anel de Progresso -->
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">
+      <svg class="scroll-progress-svg" viewBox="0 0 52 52">
+        <circle class="scroll-progress-circle" cx="26" cy="26" r="23"></circle>
+      </svg>
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
     <!-- Rodapé da página -->
     <footer>
       <div class="container">
-        <p>&copy; 2025 Roberto Varela. Todos os direitos reservados.</p>
-        <!-- Adicione links para redes sociais aqui, se desejar -->
-         <div class="social-links">
-            <a href="https://github.com/robertojr20?tab=repositories" target="_blank" aria-label="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/roberto-varela-98a4601a3/" target="_blank" aria-label="LinkedIn">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
+        <p>&copy; 2026 Roberto Varela. Todos os direitos reservados.</p>
+        <div class="social-links">
+          <a href="https://github.com/robertojr20?tab=repositories" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/roberto-varela-98a4601a3/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
         </div>
       </div>
     </footer>
-   
-    <script src="./hamburguer.js" > </script>
-    <script src="./server.js"></script>
+
+    <!-- Scripts JavaScript -->
+    <script src="./hamburguer.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>

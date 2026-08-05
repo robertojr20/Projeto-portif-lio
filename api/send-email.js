@@ -5,6 +5,9 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Método não permitido" });
   }
 
+
+
+  
   const { assunto, nome, email, mensagem } = req.body;
 
   try {
@@ -19,10 +22,10 @@ export default async function handler(req, res) {
     });
 
     await transporter.sendMail({
-      from: `${nome} <${process.env.MAIL_USER}>`,
+      from: `${nome} <${process.env.MAIL_USER || "robertojr.varela22@gmail.com"}>`,
       replyTo: email,
-      to: process.env.TO_EMAIL,
-      subject: assunto || "Nova mensagem do formulário",
+      to: process.env.TO_EMAIL || "robertojr.varela22@gmail.com",
+      subject: assunto || "Nova mensagem do formulário do Portfólio",
       text: `Assunto: ${assunto}\nNome: ${nome}\nEmail: ${email}\nMensagem:\n${mensagem}`,
     });
 
